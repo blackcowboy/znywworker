@@ -29,7 +29,7 @@ RUN echo "Begin" \
   && apk add --no-cache $GCC_PACKAGES \
   && echo "********** 安装python包cx_oracle***********************" \
 ##  && pip install --no-cache-dir cx_Oracle==8.0.1 -i http://mirrors.aliyun.com/pypi/simple  --trusted-host mirrors.aliyun.com \  
-  && cd /
-  && pip install cx_Oracle-8.3.0-cx_oracle.whl
+  && cd / \
+  && pip install cx_Oracle-8.3.0-cx_oracle.whl \
   && echo "********** 删除依赖包" \
   && echo "End"
