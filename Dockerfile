@@ -22,8 +22,8 @@ RUN echo "Begin" \
   && mkdir /oracle_client && cd /oracle_client \
   && unzip /instantclient-basic-linux.x64-11.2.0.4.0.zip \
   && cd /oracle_client/instantclient_11_2 \
-  && ln -s /usr/lib/libnsl.so.2.0.0  /usr/lib/libnsl.so.1 \
-  && ln -s libclntsh.so.11.1  libclntsh.so \
+##  && ln -s /usr/lib/libnsl.so.2.0.0  /usr/lib/libnsl.so.1 \
+##  && ln -s libclntsh.so.11.1  libclntsh.so \
   && echo "********** 安装相关的gcc依赖包*************************" \
   && apk add --no-cache $GCC_PACKAGES \
   && echo "********** 安装python包cx_oracle***********************" \
