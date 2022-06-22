@@ -7,6 +7,7 @@ ENV LD_LIBRARY_PATH=/oracle_client/instantclient_11_2
 
 
 COPY ./instantclient-basic-linux.x64-11.2.0.4.0.zip  /
+COPY ./cx_Oracle-8.3.0-cx_oracle.whl /
 
 
 ENV GCC_PACKAGES="\
@@ -27,6 +28,7 @@ RUN echo "Begin" \
   && echo "********** 安装相关的gcc依赖包*************************" \
   && apk add --no-cache $GCC_PACKAGES \
   && echo "********** 安装python包cx_oracle***********************" \
-  && pip install --no-cache-dir cx_Oracle==8.0.1 -i http://mirrors.aliyun.com/pypi/simple  --trusted-host mirrors.aliyun.com \  
+##  && pip install --no-cache-dir cx_Oracle==8.0.1 -i http://mirrors.aliyun.com/pypi/simple  --trusted-host mirrors.aliyun.com \  
+  && pip install /cx_Oracle-8.3.0-cx_oracle.whl
   && echo "********** 删除依赖包" \
   && echo "End"
